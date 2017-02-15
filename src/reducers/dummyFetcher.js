@@ -5,10 +5,10 @@
   Delete this file
 */
 
-export default function dataAsync(state={}, action){
+export default function asyncData(state={}, action){
     switch(action.type){
-        case 'RECEIVE_POSTS':
-            return Object.assign({},state,{number : action.number})
+        case 'RECEIVED_POSTS':
+            return Object.assign({},state,{asyncData : action.posts})
         default:
             return state;
     }

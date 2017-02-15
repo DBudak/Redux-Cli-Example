@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //Container
-import App from './containers/App';
+import App from './/App';
 
 //Components for routing
 import Dummy from './components/Dummy';
@@ -17,10 +17,10 @@ import store, {history} from './store';
 //Router
 const router = (
   <Provider store={store}>
-    <Router histroy={history}>
-      <Route path='/' cpmponent={App}>
+    <Router history={history}>
+      <Route path='/' component={App}>
           <IndexRoute component={Dummy}></IndexRoute>
-          <Route path='/dummy/:dummy-data' component={DummyLinked}></Route>
+          <Route path='/dummy' component={DummyLinked}></Route>
       </Route>
     </Router>
   </Provider>

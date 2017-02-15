@@ -4,11 +4,29 @@
   Delete actions below
   REFERENCES??
 */
+import fetch from 'isomorphic-fetch';
 
-export function changeData(number){
+export function changeNumber(number){
     return {
-        type: 'DUMMY_ACTION',
+        type: 'INCREMENT NUMBER',
         number: number
     }
 }
+
+export function fetchServer(url){
+    return dispatch => {
+        return fetch(url)
+            .then(response => response.json())
+            .then(json => dispatch(receivedPosts(json)))
+    }
+}
+
+export function receivedPosts(response){
+    return {
+        type: 'RECEIVED_POSTS',
+        posts: response
+    }
+}
+
+
 

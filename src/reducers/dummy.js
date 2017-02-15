@@ -6,7 +6,7 @@
 */
 export default function data(state={}, action){
     switch(action.type){
-        case 'DUMMY_ACTION':
+        case 'INCREMENT NUMBER':
             return Object.assign({},state,{number : action.number})
         default:
             return state;            

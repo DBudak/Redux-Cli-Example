@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import { Link } from react-router;
+import { Link } from 'react-router';
 
 class Main extends Component {
 
@@ -18,10 +18,15 @@ class Main extends Component {
                 <Link to="/">
                     Home
                 </Link>
-                <Link to="/dummy">
+                <Link to='/dummy'>
                     Dummy Linked
-                </Link>                
+                </Link>
+                <div className="presentation">
+                    {React.cloneElement(this.props.children, this.props)}
+                </div>                
             </div>
         );
     }
 }
+
+export default Main;

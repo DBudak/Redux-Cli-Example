@@ -1,7 +1,7 @@
 //Serving actions to an App
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/actions';
+import * as actionCreators from './actions/actions';
 
 //A Container
 import Main from './containers/Main'

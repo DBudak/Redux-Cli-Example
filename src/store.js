@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 //RootReducer
-import  rootReducer from './reducers/root';
+import  rootReducer from './reducers/rootReducer';
 
 //Middleware for Async actions and logging
 import thunkMiddleware from 'redux-thunk';
@@ -25,8 +25,7 @@ const middleware = applyMiddleware(
     loggerMiddleware
 );
 
-//Routing History
-export const history = syncHistoryWithStore(browserHistory, store);
+
 
 //Initial State
 const initialState = {
@@ -35,7 +34,10 @@ const initialState = {
 };
 
 //Store
-const store = createStore(rootReducer, defaultState, middleware, enchancers);
+const store = createStore(rootReducer, initialState, middleware, enchancers);
+
+//Routing History
+export const history = syncHistoryWithStore(browserHistory, store);
 
 export default store;
 
